@@ -1,0 +1,73 @@
+local discordia = require('discordia')
+local client = discordia.Client()
+
+local json = require('json')  -- Used for handling slash commands
+local token = 'bot token'
+
+client:on('ready', function()
+    print('Logged in as '.. client.user.username)
+end)
+
+client:on('slashCommand', function(interaction)
+    local member = interaction.member
+    local guild = interaction.guild
+
+    if interaction.data.name == "embed_message" then
+        -- Check if the user has the "Manage Server" permission
+        if not member:hasPermission(guild.me, "manageGuild") then
+            interaction:reply("You do not have permission to use this command.", true) 
+            return
+        end
+
+        local title, description, color
+        for _, option in ipairs(interaction.data.options) do
+            if option.name == "title" then
+                title = option.value
+            elseif option.name == "description" then
+                description = option.value
+            elseif option.name == "color" then
+                local hex = option.value:gsub("#", "")
+                color = tonumber(hex, 16)  -- Convert hex string to a decimal number
+            end
+        end
+
+        local embed = {
+            title = title,
+            description = description,
+            color = color or 0xe0b219  -- Default color if none is provided
+        }
+
+        interaction:reply({
+            embeds = { embed }
+        })
+    end
+end)
+
+client:on('ready', function()
+    client:createGuildApplicationCommand(guild_id, {
+        name = "embed_message",
+        description = "Send an embedded message",
+        options = {
+            {
+                name = "title",
+                description = "The title of the embed",
+                type = 3,  
+                required = true
+            },
+            {
+                name = "description",
+                description = "The description of the embed",
+                type = 3, 
+                required = true
+            },
+            {
+                name = "color",
+                description = "The hex color code of the embed (e.g., #ff5733)",
+                type = 3,  -- String type
+                required = false  -- Optional
+            }
+        }
+    })
+end)
+
+client:run('Bot ' .. token)
