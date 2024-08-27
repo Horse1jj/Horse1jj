@@ -191,3 +191,35 @@ client:on('messageCreate', function(message)
                 message:reply(createEmbedMessage("Command Successful!", "Gave vehicle " .. vehicle .. " to player " .. player_id, 0x00FF00))
             else
                 message:reply(createEmbedMessage("Failed", response, 
+-- Give pause menu to the player
+        elseif command == "givepausemenu" and message.member:hasPermission('administrator') then
+            local username = args[2]
+            if not username then
+                message:reply(createEmbedMessage("Failed", "You must provide a username.", 0xFF0000))
+                return
+            end
+            local response, success = sendRconCommand("givepausemenu " .. username)
+            if success then
+                message:reply(createEmbedMessage("Command Successful!", "Pause menu given to player " .. username, 0x00FF00))
+            else
+                message:reply(createEmbedMessage("Failed", response, 0xFF0000))
+            end
+
+        -- Remove pause menu from the player
+        elseif command == "removepausemenu" and message.member:hasPermission('administrator') then
+            local username = args[2]
+            if not username then
+                message:reply(createEmbedMessage("Failed", "You must provide a username.", 0xFF0000))
+                return
+            end
+            local response, success = sendRconCommand("removepausemenu " .. username)
+            if success then
+                message:reply(createEmbedMessage("Command Successful!", "Pause menu removed from player " .. username, 0x00FF00))
+            else
+                message:reply(createEmbedMessage("Failed", response, 0xFF0000))
+            end
+        end
+    end
+end)
+
+client:run('Bot ' .. DISCORD_TOKEN)
