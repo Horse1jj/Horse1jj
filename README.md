@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Horse1jj
-- 👀 I’m interested in coding roblox and pavlov intergations using python discord api and java script 
-- 🌱 I’m currently learning rcon bots 
+- 👀 I’m interested in devoling web,bot and games
+- 🌱 I’m currently learning fullstack,html
 - 💞️ I’m looking to collaborate on anything 
 - 📫 How to reach me discord(horse_1jj)
 - 😄 Pronouns: he/him
