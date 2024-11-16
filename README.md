@@ -1,6 +1,4 @@
-repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+
 
 <h1 align="center">Hi 👋, I'm Foste1jj</h1>
 <h3 align="center">a game,web and bot dev working for CR design studios</h3>
