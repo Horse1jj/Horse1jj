@@ -20,8 +20,6 @@
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=horse11&show_icons=true&locale=en" alt="horse11" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=horse11&" alt="horse11" /></p>
-
 
 [![fostes GitHub stats](https://github-readme-stats.vercel.app/api?username=Horse1jj)](https://github.com/anuraghazra/github-readme-stats)
 
