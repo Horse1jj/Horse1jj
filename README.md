@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm foste1jj</h1>
-<h3 align="center">I’m a 17 year old Full stack Web dev from NC</h3>
+<h3 align="center">Im a Full stack Web dev from NC</h3>
 
 - 🔭 I’m currently working on [Muisque](https://discord.gg/M3uWtXJm)
 
